@@ -43,6 +43,7 @@ def encrypt_string(hash_string):
 
 
 def handle_packet(mac_address):
+    mac_address = mac_address.lower()
     hashed_mac = encrypt_string(mac_address)
     try:
         cache.get_cache(CACHE_NAME).get(hashed_mac)
